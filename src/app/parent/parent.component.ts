@@ -3,14 +3,16 @@ import { Component, Input, EventEmitter, Output, ViewChild, ElementRef } from "@
 
 @Component({
     selector: 'app-parent',
-    templateUrl: './parent.component.html'
+    templateUrl: './parent.component.html',
+      styleUrls: ['./parent.component.css']
+
 
 })
 
 export class Parent {
     title = 'Components';
     total: number
-    prop_from_parent: string = "property from root parent"
+    prop_from_parent: string = `Component Load at ${new Date()}`
 
 
 }
