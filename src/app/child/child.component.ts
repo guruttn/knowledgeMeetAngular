@@ -29,7 +29,7 @@ export class ChildComponent implements OnInit {
 
   Onkeyup() {
     alert("key up pressed")
-    this.eventtwo.emit("shubham")
+    this.eventtwo.emit("Event Triggered")
   }
 
   Onkeydown() {
