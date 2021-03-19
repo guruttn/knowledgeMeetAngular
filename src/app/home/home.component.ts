@@ -1,4 +1,5 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { HomeService } from '../home-service';
 
 @Component({
   selector: 'app-home',
@@ -6,15 +7,20 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  myDate = new Date();
-  name: string = 'Guru';
-  currency: any = 500;
-  pipeText: string = 'I work at to the new';
-  constructor() { }
+  apiResponse: any = [];
+
+  constructor(private homeService:HomeService) { }
 
   
 
 
   ngOnInit(): void {
+    this.homeService.getConfig().subscribe((success: any) => {
+      console.log(success);
+      this.apiResponse = success;
+    }, (error: any) => {
+      console.log(error);
+      
+    })
   }
 }

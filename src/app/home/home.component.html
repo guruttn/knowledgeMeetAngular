@@ -1,17 +1,13 @@
-<h1>Learning Pipes!</h1>
+<h2>
+    API call example
+</h2>
 <div>
-    Date Pipe: {{myDate|date:'M/d/yy, h:mm a'}}
-    <br>
-    Date Pipe: {{myDate|date:'short'}}
+    Data from API
+
+    <div *ngIf="apiResponse">
+        <li *ngFor="let item of apiResponse">
+            Title: {{item.title}}  <br>UserId: {{item.userId}}
+        </li>
     </div>
 
-    <div>
-        String Pipes : {{name|uppercase}}
-        </div>
-
-        <div>
-            <p>Currency Pipes: {{currency | currency:'CAD'}}</p>
-            </div>
-            <div>
-                Custom Pipe: {{pipeText|camelcase}}
-                </div>
+    </div>
