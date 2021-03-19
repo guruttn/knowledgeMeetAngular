@@ -9,18 +9,16 @@ import { HomeService } from '../home-service';
 export class HomeComponent implements OnInit {
   apiResponse: any = [];
 
-  constructor(private homeService:HomeService) { }
+  constructor(private homeService: HomeService) { }
 
-  
+
 
 
   ngOnInit(): void {
-    this.homeService.getConfig().subscribe((success: any) => {
-      console.log(success);
-      this.apiResponse = success;
-    }, (error: any) => {
-      console.log(error);
-      
-    })
+
+  }
+
+  submit(form) {
+    console.log(form);
   }
 }

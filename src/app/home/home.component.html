@@ -2,12 +2,14 @@
     API call example
 </h2>
 <div>
-    Data from API
+    <form #f="ngForm" (submit)="submit(f)">
+        <label for="name">Name:</label>
+        <input name="name" required ngModel />
+        <br />
+        <label for="name">Email:</label>
+        <input name="email" required ngModel />
+        <br />
+        <button>Submit</button>
+    </form>
 
-    <div *ngIf="apiResponse">
-        <li *ngFor="let item of apiResponse">
-            Title: {{item.title}}  <br>UserId: {{item.userId}}
-        </li>
-    </div>
-
-    </div>
+</div>
