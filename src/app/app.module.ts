@@ -7,7 +7,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CamelcasePipe } from './camelcase.pipe'
 import { HomeService } from './home-service';
 import { HttpClientModule } from '@angular/common/http';
+// import { AppRoutingModule} from '@angular/router'
 import { FormComponent } from './form/form.component';
+import { RouterModule, Routes } from '@angular/router';
+//setting up routes
+const MyRoutes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'reactive', component: FormComponent
+  },
+  {
+    path: 'home', component: HomeComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -20,9 +32,12 @@ import { FormComponent } from './form/form.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(MyRoutes)
+
   ],
   providers: [HomeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule { }

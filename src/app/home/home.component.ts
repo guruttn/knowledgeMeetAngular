@@ -1,5 +1,6 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { HomeService } from '../home-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,9 @@ import { HomeService } from '../home-service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  apiResponse: any = [];
+  formData: any = {};
 
-  constructor(private homeService: HomeService) { }
+  constructor(private router: Router) { }
 
 
 
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   submit(form) {
-    console.log(form);
+    this.router.navigateByUrl('/reactive');
+
   }
 }
