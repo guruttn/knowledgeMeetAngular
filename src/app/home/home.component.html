@@ -1,30 +1,17 @@
-<h1>learning-directive!</h1>
+<h1>Learning Pipes!</h1>
+<div>
+    Date Pipe: {{myDate|date:'M/d/yy, h:mm a'}}
+    <br>
+    Date Pipe: {{myDate|date:'short'}}
+    </div>
 
-<hr>
-<h4>Show and hide a div on the basis of click using structural directive.</h4>
-<div *ngIf="show; else not_true">
-    <h3>Using Ng If</h3>
-</div>
-<ng-template #not_true>
-    <h3>Div Hidden</h3>
-</ng-template>
-<button (click)=" onShow()">Click Here Show hidden div Content</button>
-<hr>
-<br><br>
+    <div>
+        String Pipes : {{name|uppercase}}
+        </div>
 
-
-
-<br>
-<h4>Iterate a list of Item using structural directive.</h4>
-<ul *ngFor="let val of list">
-    <li>
-        <span>Id:{{val.id}}</span><br>
-        <span>Name:{{val.name}}</span>
-    </li>
-</ul>
-<hr>
-
-<h4>Make a input box and set its default value using ngModel.</h4>
-<input type="text" [(ngModel)]="data">
-<h4>{{data}}</h4>
-<hr>
+        <div>
+            <p>Currency Pipes: {{currency | currency:'CAD'}}</p>
+            </div>
+            <div>
+                Custom Pipe: {{pipeText|camelcase}}
+                </div>

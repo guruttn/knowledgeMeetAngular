@@ -6,27 +6,14 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  myDate = new Date();
+  name: string = 'Guru';
+  currency: any = 500;
+  pipeText: string = 'I work at to the new';
   constructor() { }
 
-  show = false;
-  setClass
-  data: String = "deafult_value";
+  
 
-  list = [{
-    name: "user1",
-    id: 1
-  }, {
-    name: "user2",
-    id: 2
-  }, {
-    name: "user3",
-    id: 3
-  }]
-
-  onShow() {
-    this.show = true
-  }
 
   ngOnInit(): void {
   }

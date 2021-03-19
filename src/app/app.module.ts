@@ -3,13 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { CamelcasePipe } from './camelcase.pipe'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    CamelcasePipe,
   ],
   imports: [
     BrowserModule,
