@@ -25,9 +25,13 @@ export class HomeComponent implements OnInit {
   }]
 
   onShow() {
-    this.show = true
+    this.show = !this.show
+  }
+  onChange() {
+    console.log('on change called')
   }
 
   ngOnInit(): void {
   }
+  
 }

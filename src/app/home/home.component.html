@@ -2,10 +2,10 @@
 <hr>
 <h4>Show and hide a div on the basis of click using structural directive.</h4>
 <div *ngIf="show; else not_true">
-    <h3>Using Ng If</h3>
+    <h3>Shown when show is true</h3>
 </div>
 <ng-template #not_true>
-    <h3>Div Hidden</h3>
+    <h3>Shown when show is false</h3>
 </ng-template>
 <button (click)=" onShow()">Click Here Show hidden div Content</button>
 <hr>
@@ -24,6 +24,6 @@
 <hr>
 
 <h4>Make a input box and set its default value using ngModel.</h4>
-<input type="text" [(ngModel)]="data">
+<input type="text" [(ngModel)]="data" (change)="onShow()">
 <h4>{{data}}</h4>
 <hr>
