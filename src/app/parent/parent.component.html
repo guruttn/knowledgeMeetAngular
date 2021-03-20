@@ -1,8 +1,9 @@
 <div class="parent">
 <h2>I m Parent Component. I m sending data to child component</h2>
 
-<app-child [data]="prop_from_parent">
+<app-child [myProp]="prop_from_parent" [myProp1]="title" >
 
 </app-child>
+{{title}}
 <hr>
 </div>

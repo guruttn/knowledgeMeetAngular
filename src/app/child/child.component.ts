@@ -7,13 +7,21 @@ import { Component, Input, EventEmitter, Output, ViewChild, ElementRef, OnInit }
 })
 export class ChildComponent implements OnInit {
 
-  constructor() { }
+
+
+
 
 
   //getting data from parents
-  @Input() data: string
+  @Input() myProp: any;
+  @Input() myProp1: any;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+    console.log(this.myProp)
+    console.log(this.myProp1)
   }
 
 }

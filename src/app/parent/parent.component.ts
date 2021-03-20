@@ -10,9 +10,9 @@ import { Component, Input, EventEmitter, Output, ViewChild, ElementRef } from "@
 })
 
 export class Parent {
-    title = 'Components';
+    title = 'My component';
     total: number
-    prop_from_parent: string = `Component Load at ${new Date()}`
+    prop_from_parent: any = {name:'guru',age:28}
 
 
 }
