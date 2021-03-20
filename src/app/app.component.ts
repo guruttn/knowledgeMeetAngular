@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MyApp2';
+  message: any = new Date();
+  constructor() {
+    setTimeout(() => {
+      this.message = new Date();
+    }, 5000);
+  }
+
 
 }
