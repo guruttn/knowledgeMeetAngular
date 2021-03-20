@@ -1,25 +1,28 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
-import { CamelcasePipe } from './camelcase.pipe';
-import { MypipePipe } from './mypipe.pipe'
-
+import { PostsService } from './services/posts.service';
+import { ListingComponent } from './posts/listing/listing.component';
+import { NewComponent } from './posts/new/new.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CamelcasePipe,
-    MypipePipe,
+    ListingComponent,
+    NewComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,26 @@
+<div class="form-container">
+	<form [formGroup]="form" (submit)="submit()">
+		<div class="form-container__fields">
+			<div class="form-container__fields-field">
+				<label>Title</label>
+				<input type="text" formControlName="title">
+                <label class="form-container__fields-field-error" *ngIf="form.get('title').touched && form.get('title').hasError('required')">
+                    This field is required.
+                </label>
+			</div>
+			<div class="form-container__fields-field">
+				<label>Body</label>
+				<input type="text" formControlName="body">
+                <label class="form-container__fields-field-error" *ngIf="form.get('body').touched && form.get('body').hasError('required')">
+                    This field is required.
+                </label>
+			</div>
+		</div>
+		<div class="form-container__fields">
+			<div class="form-container__fields-field actions">
+				<button class="button success">Submit</button>
+				<a class="button danger" routerLink="">Cancel</a>
+			</div>
+		</div>
+	</form>
+</div>
