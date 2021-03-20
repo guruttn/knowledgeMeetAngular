@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   submit(form) {
+    console.log(form)
     this.router.navigateByUrl('/reactive');
 
   }

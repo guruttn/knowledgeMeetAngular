@@ -1,43 +1,46 @@
-<h2>
-    Template Driven Form
-</h2>
-<div>
-    <form #f="ngForm" (submit)="submit(f)">
 
 
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Angular Template Driven Form</h2>
+                <form #f="ngForm" (submit)="submit(f)">
 
-        <label for="name">Name:</label>
-<input id="name" name="name" class="form-control" 
-required  [(ngModel)]="formData.name"
-    #name="ngModel">
-            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-        
-            <div *ngIf="name.errors.required">
-                Name is required.
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input id="name" name="name" class="form-control" required [(ngModel)]="formData.name"
+                            #name="ngModel">
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+
+                            <div *ngIf="name.errors.required">
+                                Name is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input name="email" type="email" class="form-control" required [(ngModel)]="formData.email"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" />
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error" >
+                            <div *ngIf="email.errors?.required">
+                                email is required.
+                            </div>
+                            <div *ngIf="email.errors?.pattern">
+                                email is invalid.
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="form-group">
+                        <button
+                        [disabled]="f.form.status==='INVALID'"
+                         class="btn btn-primary">Register</button>
+                    </div>
+                </form>
             </div>
-         
-        
         </div>
-        <br />
-        <label for="name">Email:</label>
-        <input name="email" 
-        type="email"
-        required  [(ngModel)]="formData.email"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
-
-        #email="ngModel"
- />
-        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
-        
-            <div *ngIf="email.errors.required">
-                Email is required.
-            </div>
-                <p *ngIf="email.errors?.pattern">This is not a valid Email!!!</p>
-
-            
-        
-        </div>
-        <br />     <button [disabled]="f.form.status==='INVALID'" >Submit</button>
-    </form>
-
+    </div>
 </div>

@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import { AppRoutingModule} from '@angular/router'
 import { FormComponent } from './form/form.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //setting up routes
 const MyRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,7 +34,8 @@ const MyRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(MyRoutes)
+    RouterModule.forRoot(MyRoutes),
+    NgbModule
 
   ],
   providers: [HomeService],
