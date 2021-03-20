@@ -8,7 +8,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 export class HomeComponent implements OnInit {
   myDate = new Date();
   name: string = 'Guru';
-  currency: any = 500;
+  currency: any = 50000000;
   pipeText: string = 'I work at to the new';
   constructor() { }
 
