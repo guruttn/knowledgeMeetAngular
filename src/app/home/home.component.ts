@@ -1,4 +1,5 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,24 @@ export class HomeComponent implements OnInit {
   pipeText: string = 'I work at to the new';
   constructor() { }
 
+  obsFunction = () => {
+    const simpleObservable = new Observable((observer) => {
+
+      // observable execution
+      const timer = setInterval(() => { observer.next("bla bla bla"); observer.complete()},1000)
+      setTimeout(() => {
+        clearInterval(timer);
+      },5000)
+    });
+    simpleObservable.subscribe((value: any) => {
+      console.log(value);
+    });
+  }
   
 
+ 
 
   ngOnInit(): void {
+    this.obsFunction()
   }
 }
